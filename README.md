@@ -65,3 +65,4 @@ and describes how to customize it for use.
   tags = var.tags
 }
  
+4)Only variable without default value is location. The values needs to be passed during terraform plan step
