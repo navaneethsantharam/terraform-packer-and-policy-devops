@@ -13,13 +13,6 @@ provider "azurerm" {
   features {}
 }
 
-resource "random_string" "fqdn" {
- length  = 10
- special = false
- upper   = false
- number  = false
-}
-
 resource "azurerm_virtual_network" "example" {
   name                = "example-vnet"
   address_space       = ["10.0.0.0/16"]
@@ -40,7 +33,7 @@ resource "azurerm_public_ip" "example" {
   location                     = var.location
   resource_group_name          = var.resource_group_name
   allocation_method            = "Static"
-  domain_name_label            = random_string.fqdn.result
+  domain_name_label            = lower("${var.resource_group_name}-example")
   tags = var.tags
 }
 
