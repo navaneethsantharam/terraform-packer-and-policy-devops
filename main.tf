@@ -98,26 +98,14 @@ resource "azurerm_network_security_group" "nsg" {
   tags                = var.tags
   
   security_rule {
-    name                       = "denyinternettraffichttp"
+    name                       = "denyinternettraffic"
     priority                   = 100
     direction                  = "Inbound"
     access                     = "Deny"
     protocol                   = "tcp"
     source_port_range          = "*"
-    destination_port_range     = "80"
-    source_address_prefix      = "*"
-    destination_address_prefix = "*"
-  }
- 
-  security_rule {
-    name                       = "denyinternettraffichttps"
-    priority                   = 101
-    direction                  = "Inbound"
-    access                     = "Deny"
-    protocol                   = "tcp"
-    source_port_range          = "*"
-    destination_port_range     = "443"
-    source_address_prefix      = "*"
+    destination_port_range     = "*"
+    source_address_prefix      = "Internet"
     destination_address_prefix = "*"
   }
   
