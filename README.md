@@ -51,6 +51,12 @@ and describes how to customize it for use.
   
   c)terraform destroy (to destroy resources created)
  
+ 
+ Screenshot for reference-
+ 
+![tf1](https://user-images.githubusercontent.com/108083391/192887476-2e18a0be-b04b-4415-8df1-b19074bd658f.jpg)
+![tf2](https://user-images.githubusercontent.com/108083391/192887483-d26a19f2-0cfa-4f2d-b0df-184aec653d4c.jpg)
+
  **Please note-
  
  1)main.tf has the terraform configuration to create azure resources and vars.tf has the variables. The variables has been given default value. if any values needs changes please modify default value or remove default value(so that the parameter will be prompted during terraform plan step)
